@@ -1,1 +1,0 @@
-empty log directory for docker build

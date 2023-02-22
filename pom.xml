@@ -2,19 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.highmed.dsf</groupId>
+	<groupId>de.medizininformatik-initiative</groupId>
 	<artifactId>dsf-pom</artifactId>
-	<version>0.9.0</version>
+	<version>0.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>dsf-bpe</module>
-		<module>dsf-consent</module>
 		<module>dsf-fhir</module>
-		<module>dsf-mpi</module>
-		<module>dsf-openehr</module>
-		<module>dsf-pseudonymization</module>
-		<module>dsf-tools</module>
 	</modules>
 
 	<properties>
@@ -37,13 +31,13 @@
 	</properties>
 
 	<name>highmed-dsf</name>
-	<description>HiGHmed Data Sharing Framework (HiGHmed DSF)</description>
-	<url>https://github.com/highmed/highmed-dsf</url>
+	<description>HiGHmed Data Sharing Framework (HiGHmed DSF) modified by/for de.medizininformatik-initiative</description>
+	<url>https://github.com/michael-82/highmed-dsf</url>
 
 	<scm>
-		<connection>scm:git:git://github.com/highmed/highmed-dsf.git</connection>
-		<developerConnection>scm:git:git@github.com:highmed/highmed-dsf.git</developerConnection>
-		<url>https://github.com/highmed/highmed-dsf</url>
+		<connection>scm:git:git://github.com/michael-82/highmed-dsf.git</connection>
+		<developerConnection>scm:git:git@github.com:michael-82/highmed-dsf.git</developerConnection>
+		<url>https://github.com/michael-82/highmed-dsf</url>
 	</scm>
 
 	<licenses>
@@ -575,28 +569,42 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<!-- for deployment to GitHub Packages the id must be 'github',
-		if not the deployment fails with a 401 error;
-		repository also used for snapshots if no snapshotRepository defined -->
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/highmed/highmed-dsf</url>
-		</repository>
-	</distributionManagement>
+<!--	<distributionManagement>-->
+<!--		&lt;!&ndash; for deployment to GitHub Packages the id must be 'github',-->
+<!--		if not the deployment fails with a 401 error;-->
+<!--		repository also used for snapshots if no snapshotRepository defined &ndash;&gt;-->
+<!--		<repository>-->
+<!--			<id>github</id>-->
+<!--			<name>GitHub Packages</name>-->
+<!--			<url>https://maven.pkg.github.com/highmed/highmed-dsf</url>-->
+<!--		</repository>-->
+<!--	</distributionManagement>-->
+
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>sonatype-snapshot</id>-->
+<!--			<name>oss.sonatype.org snapshots</name>-->
+<!--			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>-->
+<!--			<snapshots>-->
+<!--				<enabled>true</enabled>-->
+<!--			</snapshots>-->
+<!--			<releases>-->
+<!--				<enabled>false</enabled>-->
+<!--			</releases>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 
 	<repositories>
 		<repository>
-			<id>sonatype-snapshot</id>
-			<name>oss.sonatype.org snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<id>mii</id>
+			<name>GitHub Medizininformatik-Initiative Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/medizininformatik-initiative/*</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
 		</repository>
 	</repositories>
 
